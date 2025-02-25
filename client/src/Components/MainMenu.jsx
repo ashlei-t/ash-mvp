@@ -3,6 +3,7 @@ import { ReactTyped } from "react-typed"; // React Typed library used to animate
 import { QuizContext } from '../Helpers/Contexts';
 import '../App.css';
 
+// WELCOME PAGE
 export default function MainMenu() {
   const { setGameState, name, setName, setUserID  } = useContext(QuizContext);
   const [ showForm, setShowForm ] = useState(false)
@@ -64,7 +65,7 @@ export default function MainMenu() {
                     <p>Oh, hey there—wow, you’re really here.</p>
                     <p>Welcome to the Adopt-a-Pokebud Agency, where we match you with your ideal best bud… assuming, of course, that you’re worthy.</p>
                     <p>No pressure.</p>
-                    <p>Anyway, my name’s Ysabella. What’s your name?</p>
+                    <p>Anyway, my name’s Vicky. What’s your name?</p>
                 `]}
                 onComplete={() => setShowForm(true)} // Once the dialogue has completed this will run setShowForm
               />

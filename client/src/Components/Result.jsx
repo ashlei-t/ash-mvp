@@ -4,9 +4,8 @@ import { QuizContext } from '../Helpers/Contexts';
 import { getZodiacData } from '../Helpers/Zodiac';
 import '../App.css'
 
-// TO DO
-// Restart quiz should destroy the name reaction and just show the question
-
+// RESULT - Shows the user their answers summarize, also finds their zodiac sign
+// See Zodiac.jsx for how each zodiac sign is assigned a pokemon type
 export default function Result() {
   const { setGameState, name, answers, setMatchingCriteria, setZodiac, zodiac } = useContext(QuizContext);
   const [ zodiacDescription, setZodiacDescription ] = useState("");

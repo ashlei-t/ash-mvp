@@ -3,6 +3,7 @@ import { ReactTyped } from "react-typed";
 import { QuizContext } from '../Helpers/Contexts';
 import '../App.css';
 
+// MATCHES - Shows the pokemon criteria user matched with based on quiz answers
 export default function Matches() {
   const { name, matchingCriteria, matches, setMatches, setGameState } = useContext(QuizContext);
   const [loading, setLoading] = useState(false);
@@ -20,6 +21,8 @@ export default function Matches() {
       return;
     }
 
+    // FETCHES POKEMON BASED ON FOUR CRITERIA
+    //
     const fetchPokemonMatches = async () => {
       try {
         setLoading(true);
@@ -48,7 +51,7 @@ export default function Matches() {
         );
 
         const pokemonDetails = await Promise.all(detailsPromises);
-        console.log("pokemonDetails", pokemonDetails); // This will show the detailed info of each Pokémon
+          console.log("pokemonDetails", pokemonDetails); // This will show the detailed info of each Pokémon
         setMatches(pokemonDetails);
       }
       catch (error) {

@@ -3,7 +3,8 @@ import { ReactTyped } from "react-typed";
 import { QuizContext } from '../Helpers/Contexts';
 import '../App.css';
 
-export default function Matches() {
+// POKEBUD SELECTION - Shows four pokemon to choose from
+export default function Selection() {
     const { name, matchingCriteria, matches, answers, setGameState, setPokebud } = useContext(QuizContext);
     const [ displayBuddys, setDisplayBuddys ] = useState(false);
     console.log("matchingCriteria", matchingCriteria);

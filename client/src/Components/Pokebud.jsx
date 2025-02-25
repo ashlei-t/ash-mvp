@@ -5,6 +5,7 @@ import { useWindowSize } from 'react-use'
 import Confetti from 'react-confetti'
 import '../App.css';
 
+// POKEBUD - Save your pokebud to your email address
 export default function Pokebud() {
     const { width, height } = useWindowSize()
     const [ loading, setLoading ] = useState(false);
@@ -15,6 +16,7 @@ export default function Pokebud() {
 
     const capitalize = (name) => name.charAt(0).toUpperCase() + name.slice(1);
 
+    // Saves email address to users table
     async function postEmail(userEmail) {
         const options = {
           method: "POST",
@@ -40,6 +42,7 @@ export default function Pokebud() {
         }
       }
 
+    // Saves Pokemon ID and User ID to user_pokemon table
     async function postIDs( buddyId, newUserID ) {
       const options = {
           method: "POST",

@@ -2,6 +2,7 @@ import { useContext } from 'react';
 import { QuizContext } from '../Helpers/Contexts';
 import '../App.css';
 
+// START - Welcome page
 export default function Start() {
   const { setGameState  } = useContext(QuizContext);
 

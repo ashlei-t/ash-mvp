@@ -4,6 +4,8 @@ import { QuestionBank } from '../Helpers/QuestionBank';
 import { QuizContext } from '../Helpers/Contexts';
 import '../App.css';
 
+// QUIZ/QUESTIONS - Collects pokemon criteria via quiz answers
+// See Helpers/QuestionBank.js for prompts, answer choices and pokemon criteria
 export default function Quiz() {
   const { setGameState, name, setAnswers, setMatchingCriteria } = useContext(QuizContext);
   const [ displayQuestion, setDisplayQuestion ] = useState(false);
@@ -21,7 +23,7 @@ export default function Quiz() {
   const handleDate = (bday) => {
     setOptionChosen(bday.target.value);
   };
-
+  
   const handleCriteria = (selectedOption) => {
     setMatchingCriteria(criteria => ({
       ...criteria,
