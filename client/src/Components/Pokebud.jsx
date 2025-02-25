@@ -114,13 +114,13 @@ export default function Pokebud() {
               loop={false}
               showCursor={false}
               strings={[
-                  `<p>${capitalize(pokebud.pokename)} is your saved as your buddy with your email address!</p><p>Coming Soon: Interactive dashboard and/or certificate of adoption</p><p>STAY TUNED!</p>`
+                  `<p>POKEBUD SAVED!</p><p>Coming Soon: Interactive dashboard and/or certificate of adoption</p><p>STAY TUNED!</p>`
               ]}
               onComplete={() => setShowPokebud(true)}
           />
           }
           </div>
-          {showPokebud && (
+          { showPokebud && (
           <form className="transition-form" onSubmit={handleSubmit}>
                 <label>Email address</label>
                 <input

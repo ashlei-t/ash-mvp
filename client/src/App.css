@@ -85,7 +85,7 @@ ul {
   margin: 0;
 }
 
-.Menu, .Result, .Questions, .Matches, .Selection {
+.Start, .Menu, .Result, .Questions, .Matches, .Selection {
   background-color: var(--menu-bg);
   border: 2px solid var(--text-shadow);
   border-radius: 35px;
@@ -146,6 +146,16 @@ ul {
   line-height: 20px;
   font-size: 10px;
   width: 275px;
+}
+
+.bulbasaur {
+  width: 80px;
+  text-align: center;
+  padding: 10px;
+  bottom: 0;
+  position: relative;
+  margin: 10px auto;
+  display: flex;
 }
 
 /* || FORM ||

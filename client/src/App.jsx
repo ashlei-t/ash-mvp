@@ -6,11 +6,12 @@ import Result from './Components/Result';
 import Matches from './Components/Matches';
 import Selection from './Components/Selection';
 import Pokebud from './Components/Pokebud';
+import Start from './Components/Start';
 import './App.css';
 
 function App() {
     // Game state === changes the component
-    const [gameState, setGameState] = useState("menu");
+    const [gameState, setGameState] = useState("start");
 
     // User Info states
     const [name, setName] = useState("");
@@ -42,6 +43,7 @@ function App() {
         userID, setUserID
           }}>
         <div className="App">
+          {gameState === "start" && <Start />}
           {gameState === "menu" && <MainMenu />}
           {gameState === "questions" && <Quiz />}
           {gameState === "result" && <Result />}

@@ -13,7 +13,6 @@ export default function Matches() {
   const zType = matchingCriteria.zodiacType;
 
   const capitilize = (word) => word.charAt(0).toUpperCase() + word.slice(1);
-  console.log("MATCHES matching criteria", matchingCriteria);
 
   useEffect(() => {
     if (matches.length > 0) {
@@ -31,6 +30,12 @@ export default function Matches() {
           fetch(`api/pokemon/pokemon-type/${zType}`)
         ])
 
+        for (const response of responses) {
+          if (!response.ok) {
+            throw new Error(`Fetch failed with status: ${response.status} - ${response.url}`);
+          }
+        }
+
         const habitatPokemon = await responses[0].json();
         const shapePokemon = await responses[1].json();
         const typePokemon = await responses[2].json();
@@ -38,11 +43,9 @@ export default function Matches() {
 
         const allPokemonNames = [habitatPokemon, shapePokemon, typePokemon, zTypePokemon ];
 
-        console.log({allPokemonNames});
         const detailsPromises = allPokemonNames.map(name =>
           fetch(`api/pokemon/pokemon-details/${name}`).then(res => res.json())
         );
-        console.log({detailsPromises});
 
         const pokemonDetails = await Promise.all(detailsPromises);
         console.log("pokemonDetails", pokemonDetails); // This will show the detailed info of each Pokémon
