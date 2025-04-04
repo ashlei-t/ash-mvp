@@ -57,7 +57,7 @@ export default function MainMenu() {
             : (
               <ReactTyped
                 startWhenVisible
-                typeSpeed={30}
+                typeSpeed={0}
                 backSpeed={0}
                 loop={false}
                 showCursor={false}

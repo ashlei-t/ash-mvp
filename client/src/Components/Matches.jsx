@@ -81,7 +81,7 @@ export default function Matches() {
             : (
             <ReactTyped
                 startWhenVisible
-                typeSpeed={20}
+                typeSpeed={0}
                 backSpeed={0}
                 loop={false}
                 showCursor={false}

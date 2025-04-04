@@ -69,7 +69,7 @@ export default function Result() {
             : (
               <ReactTyped
                 startWhenVisible
-                typeSpeed={20}
+                typeSpeed={0}
                 backSpeed={0}
                 loop={false}
                 showCursor={false}

@@ -23,7 +23,7 @@ export default function Quiz() {
   const handleDate = (bday) => {
     setOptionChosen(bday.target.value);
   };
-  
+
   const handleCriteria = (selectedOption) => {
     setMatchingCriteria(criteria => ({
       ...criteria,
@@ -69,7 +69,7 @@ export default function Quiz() {
           <div className={quizIntro ? "hide" : "quiz intro"}>
               <ReactTyped
                     startWhenVisible
-                    typeSpeed={20}
+                    typeSpeed={0}
                     backSpeed={0}
                     loop={false}
                     showCursor={false}
