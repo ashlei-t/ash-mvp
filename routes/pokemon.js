@@ -73,13 +73,36 @@ const fetchPokemonDetails = async (name) => {
         return {
             name: data.name,
             id: data.id,
-            sprite: data.sprites.other.showdown.front_default
+            sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${data.id}.gif`
         }
     } catch (e) {
         console.error('Error fetching details data:', error);
         throw error;
     }
 }
+
+// R A N D O M ================================
+const fetchRandomPokemon = async () => {
+    try {
+        // Get a random Pokemon ID between 1 and 151 (first generation)
+        const randomId = Math.floor(Math.random() * 151) + 1;
+        const response = await fetch(`https://pokeapi.co/api/v2/pokemon/${randomId}`);
+        const data = await response.json();
+
+        if (!response.ok) {
+            throw new Error(`$response.status`, "response is not ok dude")
+        }
+
+        return {
+            id: data.id,
+            name: data.name,
+            sprite: data.sprites.other['official-artwork'].front_default || data.sprites.front_default
+        };
+    } catch (error) {
+        console.error('Error fetching random Pokemon:', error);
+        throw error;
+    }
+};
 
 // H A B I T A T router ============================
 router.get('/pokemon-habitat/:habitat', async (req, res) => {
@@ -132,5 +155,16 @@ router.get('/pokemon-details/:name', async (req, res) => {
       res.status(500).send({ message: 'Error fetching details data' });
     }
   });
+
+// Add this to your routes
+router.get('/random', async (req, res) => {
+    try {
+        const randomPokemon = await fetchRandomPokemon();
+        res.json(randomPokemon);
+    } catch (error) {
+        console.error('Error in /random route:', error);
+        res.status(500).json({ error: 'Failed to fetch random Pokemon' });
+    }
+});
 
   module.exports = router;

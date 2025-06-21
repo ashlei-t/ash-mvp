@@ -74,7 +74,7 @@ export default function Quiz() {
                     loop={false}
                     showCursor={false}
                     strings={[
-                     `<p>Huh. ${name}. Bold choice. But hey, I guess you didn’t pick it. Welcome, ${name}!</p>
+                     `<p>Huh. ${name}. Bold choice. Welcome, ${name}!</p>
                       <p>Now, to find your perfect Pokébud, I just need to ask a few crucial, highly scientific questions.</p>`
                     ]}
                     onComplete={() => setDisplayQuestion(true)}
@@ -85,7 +85,7 @@ export default function Quiz() {
             <>
               <ReactTyped
                     startWhenVisible
-                    typeSpeed={20}
+                    typeSpeed={0}
                     backSpeed={0}
                     loop={false}
                     showCursor={false}

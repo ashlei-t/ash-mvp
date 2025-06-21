@@ -9,7 +9,7 @@ export default function Start() {
   return (
     <>
       <div className="Start">
-          <h1>POKEBUDZ</h1>
+          <h1>ash's pokemon remake</h1>
               <div className="dialogue">
                 <img className="bulbasaur" src="https://i.pinimg.com/originals/bf/95/c5/bf95c53a70819967d79c6ce2ff6883bc.gif"></img>
               </div>

@@ -1,6 +1,6 @@
 export const QuestionBank = [
     {   // TYPE https://pokeapi.co/api/v2/type/
-        prompt: (name) => `<p>Alright, ${name}, let’s start strong—what’s your life philosophy?</p>`,
+        prompt: (name) => `<p>Alright, ${name}, what’s your life philosophy?</p>`,
         type: "multiple-choice",
         key: "type2",
         options: [
