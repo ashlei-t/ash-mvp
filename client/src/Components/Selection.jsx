@@ -25,7 +25,6 @@ export default function Selection() {
             try {
                 setError(null);
                 const starters = ['bulbasaur', 'charmander', 'squirtle', 'pikachu'];
-                console.log("Fetching starters:", starters);
 
                 const starterPromises = starters.map(async (name) => {
                     try {
@@ -76,7 +75,7 @@ export default function Selection() {
         ashStarters,
         matches,
         hasData: Boolean(matches || ashStarters),
-        dataToRender: matches || ashStarters
+        dataToRender: matches ? matches : ashStarters
     });
 
     if (error) {
@@ -110,7 +109,7 @@ export default function Selection() {
                 />
                 { displayBuddys && (
                     <div className="pokemon-matches">
-                        {(matches || ashStarters).map((poke) => {
+                        {(matches.length > 0 ? matches : ashStarters).map((poke) => {
                             console.log("Rendering Pokemon:", poke);
                             return (
                                 <div key={poke.id} className="pokemon-card">
@@ -132,7 +131,7 @@ export default function Selection() {
             </div>
             { displayBuddys && (
                 <div className="selectButtons">
-                    {(matches || ashStarters).map((poke) => {
+                    {(matches.length > 0 ? matches : ashStarters).map((poke) => {
                         console.log("Rendering button for:", poke);
                         return (
                             <div key={poke.id} className="selectbuttons">
