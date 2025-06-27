@@ -1,7 +1,7 @@
 import { useState, FormEvent, ChangeEvent } from "react";
 import { supabase } from "../supabase-client";
 
-export const Auth = () => {
+export default function Auth() {
   const [isSignUp, setIsSignUp] = useState(false);
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
@@ -16,7 +16,6 @@ export const Auth = () => {
       });
       if (signUpError) {
         console.error("Error signing up:", signUpError.message);
-        return;
       }
     } else {
       const { error: signInError } = await supabase.auth.signInWithPassword({
@@ -25,7 +24,6 @@ export const Auth = () => {
       });
       if (signInError) {
         console.error("Error signing up:", signInError.message);
-        return;
       }
     }
   };
