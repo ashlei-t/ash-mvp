@@ -3,6 +3,7 @@ import { supabase } from "../supabase-client";
 
 export default function Auth() {
   const [isSignUp, setIsSignUp] = useState(false);
+  const [fullname, setFullName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
 
@@ -29,9 +30,20 @@ export default function Auth() {
   };
 
   return (
-    <div style={{ maxWidth: "400px", margin: "0 auto", padding: "1rem" }}>
+    <div>
       <h2>{isSignUp ? "Sign Up" : "Sign In"}</h2>
       <form onSubmit={handleSubmit}>
+        {isSignUp && (
+         <input
+          type="name"
+          placeholder="Name"
+          value={fullname}
+          onChange={(e: ChangeEvent<HTMLInputElement>) =>
+            setEmail(e.target.value)
+          }
+          style={{ width: "100%", marginBottom: "0.5rem", padding: "0.5rem" }}
+        />
+        )}
         <input
           type="email"
           placeholder="Email"
