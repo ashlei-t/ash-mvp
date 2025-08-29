@@ -96,7 +96,7 @@ const fetchRandomPokemon = async () => {
         return {
             id: data.id,
             name: data.name,
-            sprite: data.sprites.other['official-artwork'].front_default || data.sprites.front_default
+            sprite: `https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/showdown/${data.id}.gif`
         };
     } catch (error) {
         console.error('Error fetching random Pokemon:', error);
@@ -156,7 +156,7 @@ router.get('/pokemon-details/:name', async (req, res) => {
     }
   });
 
-// Add this to your routes
+// FETCH RANDOM POKEMON ============================
 router.get('/random', async (req, res) => {
     try {
         const randomPokemon = await fetchRandomPokemon();

@@ -11,6 +11,8 @@ export default function Pokebud() {
     const [ loading, setLoading ] = useState(false);
     const { name, pokebud, userID } = useContext(QuizContext);
     const [ email, setEmail ] = useState("");
+    const [ password, setPassword ] = useState("");
+    const [ confirmPassword, setConfirmPassword ] = useState("");
     const [ showPokebud, setShowPokebud ] = useState(false);
     const [ savePokebud, setSavePokebud ] = useState(false);
 
@@ -70,7 +72,7 @@ export default function Pokebud() {
 
     const handleSubmit = async (event) => {
         event.preventDefault();
-        if (email.trim()) {
+        if (email.trim() && password.trim() && confirmPassword.trim()) {
             await postEmail(email);
             await postIDs(pokebud.pokeid, userID);
             setSavePokebud(true);
@@ -80,6 +82,9 @@ export default function Pokebud() {
             console.log("userID", userID);
         } else {
             alert("uh oh");
+        }
+        if (password !== confirmPassword) {
+            alert("Passwords do not match");
         }
       };
 
@@ -125,14 +130,29 @@ export default function Pokebud() {
           </div>
           { showPokebud && (
           <form className="transition-form" onSubmit={handleSubmit}>
-                <label>Email address</label>
+            {/* create an account */}
+                <label>Create an account</label>
                 <input
-                    type="email"
-                    placeholder="email address"
+                    type="text"
+                    placeholder="user email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
                 />
-                <button type="submit">Save my buddy</button>
+                <label>Create a password</label>
+                <input
+                    type="password"
+                    placeholder="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                />
+                <label>Confirm password</label>
+                <input
+                    type="password"
+                    placeholder="confirm password"
+                    value={confirmPassword}
+                    onChange={(e) => setConfirmPassword(e.target.value)}
+                />
+                <button type="submit">Create account & Save my buddy</button>
             </form>
             )}
           </div>
