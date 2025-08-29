@@ -5,7 +5,7 @@ import '../App.css';
 
 // MATCHES - Shows the pokemon criteria user matched with based on quiz answers
 export default function Matches() {
-  const { name, matchingCriteria, matches, setMatches, setGameState } = useContext(QuizContext);
+  const { matchingCriteria, matches, setMatches, setGameState } = useContext(QuizContext);
   const [loading, setLoading] = useState(false);
   const [ ready, setReady ] = useState(false);
   const habitat = matchingCriteria.pokemonHabitat;
@@ -70,7 +70,7 @@ export default function Matches() {
     return (
       <>
         <div className="Matches">
-          <h1>{`${name}'s Pokebud Analysis`}</h1>
+          <h1>{`Pokebud Analysis`}</h1>
           <div className="dialogue">
           {loading ?
             <>

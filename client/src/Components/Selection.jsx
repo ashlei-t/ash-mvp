@@ -5,12 +5,10 @@ import '../App.css';
 
 // POKEBUD SELECTION - Shows four pokemon to choose from
 export default function Selection() {
-    const { name, matches, setGameState, setPokebud } = useContext(QuizContext);
+    const { matches, setGameState, setPokebud } = useContext(QuizContext);
     const [ displayBuddys, setDisplayBuddys ] = useState(false);
     const [ ashStarters, setAshStarters ] = useState([]);
     const [ error, setError ] = useState(null);
-
-    const capitilize = (name) => name.charAt(0).toUpperCase() + name.slice(1);
 
     useEffect(() => {
         // If we have matches from the quiz, use those
@@ -92,7 +90,7 @@ export default function Selection() {
 
     return (
         <div className="Selection">
-            <h1>{`${name}'s Pokebud Matches`}</h1>
+            <h1>{`YourPokebud Matches`}</h1>
             <div className="dialogue">
                 <ReactTyped
                     startWhenVisible
@@ -102,7 +100,7 @@ export default function Selection() {
                     showCursor={false}
                     strings={[
                         matches && matches.length > 0
-                            ? `${name} here are your matches! So which one will you call your best bud for life?`
+                            ? `Here are your matches! So which one will you call your best bud for life?`
                             : `Choose your starter Pokemon, just like Ash did!`
                     ]}
                     onComplete={() => setDisplayBuddys(true)}
@@ -122,7 +120,7 @@ export default function Selection() {
                                             e.target.src = 'https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/0.png';
                                         }}
                                     />
-                                    <p className="buddy">{capitilize(poke.name)}</p>
+                                    <p className="buddy">{poke.name}</p>
                                 </div>
                             );
                         })}
@@ -140,7 +138,7 @@ export default function Selection() {
                                     className="option"
                                     onClick={() => pokebudPick(poke.id, poke.name, poke.sprite)}
                                 >
-                                    {capitilize(poke.name)}
+                                    {poke.name}
                                 </button>
                             </div>
                         );

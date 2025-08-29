@@ -9,7 +9,7 @@ import '../App.css';
 export default function Pokebud() {
     const { width, height } = useWindowSize()
     const [ loading, setLoading ] = useState(false);
-    const { name, pokebud, userID } = useContext(QuizContext);
+    const { pokebud, userID } = useContext(QuizContext);
     const [ email, setEmail ] = useState("");
     const [ password, setPassword ] = useState("");
     const [ confirmPassword, setConfirmPassword ] = useState("");
@@ -17,7 +17,7 @@ export default function Pokebud() {
     const [ savePokebud, setSavePokebud ] = useState(false);
 
     const capitalize = (name) => name.charAt(0).toUpperCase() + name.slice(1);
-
+    
     // Saves email address to users table
     async function postEmail(userEmail) {
         const options = {
@@ -92,7 +92,7 @@ export default function Pokebud() {
       <>
       <Confetti width={width} height={height} />
         <div className="Selection">
-          <h1>{`${name}'s Pokebud`}</h1>
+          <h1>{`Your Pokebud`}</h1>
           <div className="dialogue">
           { loading ? "" : (
             <ReactTyped

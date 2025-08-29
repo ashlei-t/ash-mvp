@@ -7,7 +7,7 @@ import '../App.css'
 // RESULT - Shows the user their answers summarize, also finds their zodiac sign
 // See Zodiac.jsx for how each zodiac sign is assigned a pokemon type
 export default function Result() {
-  const { setGameState, name, answers, setMatchingCriteria, setZodiac, zodiac } = useContext(QuizContext);
+  const { setGameState, answers, setMatchingCriteria, setZodiac, zodiac } = useContext(QuizContext);
   const [ zodiacDescription, setZodiacDescription ] = useState("");
   const [ showButtons, setShowButtons ] = useState(false);
   const capitilize = (word) => word.charAt(0).toUpperCase() + word.slice(1);
@@ -58,7 +58,7 @@ export default function Result() {
   return (
     <>
         <div className="Result">
-          <h1>{`${name}'s`} Results</h1>
+          <h1>Your Results</h1>
           <div className="dialogue">
           { !zodiacDescription ?
             <>

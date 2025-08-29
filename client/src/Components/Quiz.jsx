@@ -7,7 +7,7 @@ import '../App.css';
 // QUIZ/QUESTIONS - Collects pokemon criteria via quiz answers
 // See Helpers/QuestionBank.js for prompts, answer choices and pokemon criteria
 export default function Quiz() {
-  const { setGameState, name, setAnswers, setMatchingCriteria } = useContext(QuizContext);
+  const { setGameState, setAnswers, setMatchingCriteria } = useContext(QuizContext);
   const [ displayQuestion, setDisplayQuestion ] = useState(false);
   const [ showForm, setShowForm ] = useState(false);
   const [ currQuestion, setCurrQuestion ] = useState(0);
@@ -64,7 +64,7 @@ export default function Quiz() {
   return (
     <>
       <div className="Questions">
-        <h1>{`${name}'s`} Pokebuds Application</h1>
+        <h1>Your Pokebuds Application</h1>
         <div className="dialogue">
           <div className={quizIntro ? "hide" : "quiz intro"}>
               <ReactTyped
@@ -74,8 +74,7 @@ export default function Quiz() {
                     loop={false}
                     showCursor={false}
                     strings={[
-                     `<p>Huh. ${name}. Bold choice. Welcome, ${name}!</p>
-                      <p>Now, to find your perfect Pokébud, I just need to ask a few crucial, highly scientific questions.</p>`
+                     `<p>Now, to find your perfect Pokébud, I just need to ask a few crucial, highly scientific questions.</p>`
                     ]}
                     onComplete={() => setDisplayQuestion(true)}
 
@@ -89,7 +88,7 @@ export default function Quiz() {
                     backSpeed={0}
                     loop={false}
                     showCursor={false}
-                    strings={[QuestionBank[currQuestion].prompt(name)]}
+                    strings={[QuestionBank[currQuestion].prompt()]}
                     onComplete={() => setShowForm(true)}
               />
 

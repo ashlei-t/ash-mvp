@@ -1,6 +1,6 @@
 export const QuestionBank = [
     {   // TYPE https://pokeapi.co/api/v2/type/
-        prompt: (name) => `<p>Alright, ${name}, what’s your life philosophy?</p>`,
+        prompt: () => `<p>Alright, what’s your life philosophy?</p>`,
         type: "multiple-choice",
         key: "type2",
         options: [
@@ -11,7 +11,7 @@ export const QuestionBank = [
         ]
     },
     {   // SHAPE https://pokeapi.co/api/v2/pokemon-shape
-        prompt: (name) => `Excellente, thats a great approach to life. Next question ${name}  <p>How would your friends describe you?</p>`,
+        prompt: () => `Excellente, thats a great approach to life. Next question  <p>How would your friends describe you?</p>`,
         type: "multiple-choice",
         key: "shape",
         options: [
@@ -22,7 +22,7 @@ export const QuestionBank = [
         ]
     },
     {   // HABITAT https://pokeapi.co/api/v2/pokemon-habitat
-        prompt: (name) => `Yea that tracks. <p>Next question ${name},</p><p>Where do you feel most at home or love to explore?</p>`,
+        prompt: () => `Yea that tracks. <p>Next question,</p><p>Where do you feel most at home or love to explore?</p>`,
         type: "multiple-choice",
         key: "habitat",
         options: [
@@ -33,7 +33,7 @@ export const QuestionBank = [
         ]
     },
     {   // ZODIAC TYPE https://pokeapi.co/api/v2/type/
-        prompt: (name) => `WHUT! That's also my favorite place! <p>Last question,</p> here's an easy one ${name}, when is your birthday?`,
+        prompt: () => `WHUT! That's also my favorite place! <p>Last question,</p> here's an easy one, when is your birthday?`,
         type: "text",
         key: "birthday"
     }
